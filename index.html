@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #ffd6e5;
+
+        border: 40px solid transparent;
+        border-image: url("roses-border.png") 30 round;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Top-left header text */
+    .corner-name {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        font-size: 48px; /* ~3x bigger */
+        z-index: 5;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 40px 50px;
+        border-radius: 16px;
+        max-width: 500px;
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    .cursive {
+        font-family: "Pacifico", cursive;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+
+    button {
+        font-family: "Pacifico", cursive;
+        font-size: 22px;
+        padding: 10px 22px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Hover effect for Yes button */
+    #yesBtn:hover {
+        background-color: #b6fcb6; /* light green */
+        transform: scale(1.05);
+    }
+
+    /* Hover effect for Omg Yes button */
+    #omgBtn:hover {
+        background-color: #ffb6b6; /* light red */
+        transform: scale(1.05);
+    }
+
+    .cat {
+        width: 140px;
+        margin: 15px auto; /* centers image */
+        display: block;
+    }
+
+    #finalMessage {
+        display: none;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+    }
+
+    .love-line {
+        font-family: "Pacifico", cursive;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+<body>
+
+<div class="corner-name">Anaya Ruth Evans...</div>
+
+<div class="container">
+
+    <div id="firstScreen" class="cursive">
+
+        <h1>Will you be my valentine?</h1>
+
+        <img src="cat-one-rose.png"
+             alt="Cute cat holding a rose"
+             class="cat">
+
+        <div>
+            <!-- Yes button -->
+            <button id="yesBtn" onclick="showFinal()">Yes, i love you</button>
+            <!-- Omg yes button -->
+            <button id="omgBtn" onclick="hideOmg()">No, i hate you</button>
+        </div>
+
+    </div>
+
+    <div id="finalMessage">
+
+        <div class="love-line">I love you too!</div>
+
+        <p>
+            Thank you for saying yes. I will not be doing this again.
+            It was more work than I thought.
+        </p>
+
+        <img src="cat-two-roses.png"
+             alt="Cute cat holding two roses"
+             class="cat">
+    </div>
+
+</div>
+
+<script>
+function showFinal() {
+    document.getElementById("firstScreen").style.display = "none";
+    document.getElementById("finalMessage").style.display = "block";
+}
+
+function hideOmg() {
+    // Make the Omg button disappear
+    document.getElementById("omgBtn").style.display = "none";
+}
+</script>
+
+</body>
+</html>
